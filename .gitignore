@@ -1,0 +1,25 @@
+# ---- 宿主机测试产物 ----
+tests/*.exe
+tests/*.o
+tests/*.obj
+
+# ---- 编译中间文件 ----
+*.o
+*.obj
+*.d
+*.map
+
+# ---- CubeIDE / 构建目录（.ioc 必须提交，构建目录不用） ----
+**/Debug/
+**/Release/
+**/build/
+*.launch
+
+# ---- Python ----
+__pycache__/
+*.pyc
+
+# ---- 系统 ----
+Thumbs.db
+.DS_Store
+desktop.ini
