@@ -95,7 +95,7 @@ static const uint8_t s_gamma_n[14] = {
 
 void st7789_init(void)
 {
-    const uint8_t p;
+    uint8_t p;
 
     /* 1. 硬件复位：拉低 10ms，释放后必须等 ≥120ms 再发命令 */
     HAL_GPIO_WritePin(TFT_RST_GPIO_Port, TFT_RST_Pin, GPIO_PIN_RESET);
