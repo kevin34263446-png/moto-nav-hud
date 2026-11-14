@@ -11,6 +11,26 @@
 
 用 Board 模板的好处：CubeMX 会自动把 HSE 配成"ST-Link MCO 提供的 8MHz"，不用自己猜板载有没有晶振。
 
+### 1.1 固件包（CubeIDE 2.x 变了，实测会卡住）
+
+CubeMX 生成代码需要 **STM32CubeF4 固件包**，否则报 `firmware package not found`。
+
+| CubeIDE 版本 | 装固件包的方式 |
+|---|---|
+| 1.x | `Help → Manage Embedded Software Packages` → 勾选 STM32F4 系列 → Install |
+| **2.x（本项目实测 2.2.0）** | **该菜单已移除**。插件里能看到 `com.st.stm32cube.ide.common.services.mx` 和新版工程创建向导，包改成建工程时按需下载 |
+
+**2.x 上如果建工程时没有弹下载提示**，手工装（不需要 ST 账号）：
+
+1. 从 ST 官方 GitHub 仓库下对应版本源码包（tag 名即版本号）：
+   `https://codeload.github.com/STMicroelectronics/STM32CubeF4/zip/refs/tags/v1.28.3`（约 183 MB）
+2. 解压，把顶层目录**改名为** `STM32Cube_FW_F4_V1.28.3`（名字必须与版本严格对应，CubeIDE 靠它识别版本）
+3. 放到 `C:\Users\<你的用户名>\STM32Cube\Repository\STM32Cube_FW_F4_V1.28.3`
+4. 校验目录里有 `Drivers/`、`Projects/`、`Middlewares/`、`Utilities/`，且 `Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h` 存在
+5. **重启 CubeIDE** 再建工程
+
+> 说明：GitHub 上的 `STMicroelectronics/STM32CubeF4` 是 ST 官方仓库，与 st.com 下载的包内容一致，只是不走登录。它和"网盘免登录版"是两回事——后者可能被改过，别用。
+
 ## 2. 时钟树（目标 180MHz）
 
 在 `Clock Configuration` 里填：
