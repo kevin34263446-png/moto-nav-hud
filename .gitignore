@@ -23,3 +23,6 @@ __pycache__/
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# ---- 第三方固件库：由 tools/setup-drivers.ps1 生成，不入库 ----
+firmware/Drivers/
