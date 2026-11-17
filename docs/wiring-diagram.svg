@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="Consolas, Menlo, monospace">
+  <rect width="960" height="640" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">
+    摩托导航 HUD —— 接线图（NUCLEO-F446RE → ST7789 2.0" 240×320）
+  </text>
+  <text x="480" y="58" text-anchor="middle" font-size="13" fill="#666">
+    实测可用配置：模块 VCC 由板载稳压芯片承受 5V；信号线一律 3.3V 电平
+  </text>
+
+  <!-- Nucleo board -->
+  <rect x="40" y="90" width="360" height="480" rx="10" fill="#f2f7ff" stroke="#3a6ea5" stroke-width="2"/>
+  <text x="220" y="118" text-anchor="middle" font-size="16" font-weight="bold" fill="#3a6ea5">NUCLEO-F446RE</text>
+
+  <!-- Screen module -->
+  <rect x="640" y="120" width="280" height="420" rx="10" fill="#f7f7f2" stroke="#8a6d3b" stroke-width="2"/>
+  <text x="780" y="148" text-anchor="middle" font-size="16" font-weight="bold" fill="#8a6d3b">ST7789 240×320</text>
+  <rect x="680" y="170" width="200" height="240" rx="4" fill="#1a1a1a"/>
+  <text x="780" y="300" text-anchor="middle" font-size="13" fill="#7fd4ff">2.0" IPS</text>
+
+  <!-- board pins (left column) -->
+  <g font-size="14" fill="#1a1a1a">
+    <text x="70" y="176">5V</text>
+    <text x="70" y="216">5V</text>
+    <text x="70" y="256">GND</text>
+    <text x="70" y="316">D13  (PA5)</text>
+    <text x="70" y="356">D11  (PA7)</text>
+    <text x="70" y="396">D10  (PB6)</text>
+    <text x="70" y="436">D4   (PB5)</text>
+    <text x="70" y="476">D5   (PB4)</text>
+    <text x="70" y="536" fill="#c00000" font-weight="bold">NRST  ✗ 禁止接</text>
+  </g>
+
+  <!-- screen pins (right column) -->
+  <g font-size="14" fill="#1a1a1a" text-anchor="end">
+    <text x="910" y="176">VCC</text>
+    <text x="910" y="216">BL</text>
+    <text x="910" y="256">GND</text>
+    <text x="910" y="316">SCL / SCK</text>
+    <text x="910" y="356">SDA / MOSI</text>
+    <text x="910" y="396">CS</text>
+    <text x="910" y="436">DC</text>
+    <text x="910" y="476">RES</text>
+  </g>
+
+  <!-- wires -->
+  <g stroke-width="3" fill="none">
+    <line x1="190" y1="171" x2="700" y2="171" stroke="#d32f2f"/>
+    <line x1="190" y1="211" x2="700" y2="211" stroke="#f57c00"/>
+    <line x1="190" y1="251" x2="700" y2="251" stroke="#111111"/>
+    <line x1="190" y1="311" x2="700" y2="311" stroke="#fbc02d"/>
+    <line x1="190" y1="351" x2="700" y2="351" stroke="#2e7d32"/>
+    <line x1="190" y1="391" x2="700" y2="391" stroke="#1565c0"/>
+    <line x1="190" y1="431" x2="700" y2="431" stroke="#6a1b9a"/>
+    <line x1="190" y1="471" x2="700" y2="471" stroke="#00838f"/>
+  </g>
+
+  <!-- NRST warning -->
+  <line x1="190" y1="531" x2="260" y2="531" stroke="#c00000" stroke-width="3" stroke-dasharray="6 6"/>
+  <text x="270" y="536" font-size="13" fill="#c00000">插到 NRST → 整块板子被按在复位，烧录报 DEV_TARGET_HELD_UNDER_RESET</text>
+
+  <!-- legend -->
+  <g font-size="13" fill="#333">
+    <text x="40" y="600" font-weight="bold">要点：</text>
+    <text x="110" y="600">① VCC / BL 都接 5V（模块背面有稳压芯片）  ② 信号线绝不接 5V  ③ MISO 不接  ④ PA5 与板载 LD2 共用，屏幕刷新时绿灯会闪，属正常</text>
+  </g>
+</svg>

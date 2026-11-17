@@ -105,7 +105,9 @@ moto-nav-hud/
 | 输入 | 轻触按键 ×3 | 内部上拉，按下接地 |
 | 提示 | 有源蜂鸣器 + S8050 | IO 经三极管驱动 |
 
-接线与供电见 [`docs/03-hardware.md`](docs/03-hardware.md)。
+接线与供电见 [`docs/03-hardware.md`](docs/03-hardware.md)，接线图见 [`docs/wiring-diagram.svg`](docs/wiring-diagram.svg)。
+
+演示视频的拍法见 [`docs/10-demo-script.md`](docs/10-demo-script.md)（45 秒分镜脚本）。
 
 ---
 
