@@ -79,4 +79,23 @@
 
 ---
 
+## 11-17  M4 接入 LVGL
+
+**做法**：克隆 LVGL 8.3.11（浅克隆，删掉 docs/examples/demos 后 14.5MB），写 lv_conf.h（只覆盖与默认值不同的项），实现 lv_port_disp 的 lush_cb。
+
+**三个关键决定**：
+1. **LV_COLOR_16_SWAP 1** —— LVGL 默认按小端存放颜色，ST7789 要大端。打开这个开关后缓冲区内存布局就是 SPI 要发的顺序，刷屏可以直接 spi_tx()，不用逐像素交换。
+2. **单缓冲 240×40（19.2KB）+ 同步 flush** —— 先保证正确性；把 lv_disp_flush_ready() 放在 spi_tx 之后。双缓冲 + DMA 留到 M5 提速。
+3. **界面用 LVGL 内置 symbol 字体做转向符号** —— 省掉自制字库，LV_SYMBOL_LEFT/RIGHT/UP/REFRESH/OK/WARNING 直接可用。
+
+**实测资源占用**：
+- Flash **318 KB / 512 KB**（含 LVGL 全部模块 + montserrat 14/28/48 三套字体）
+- RAM **55 KB / 128 KB**（LVGL 堆 32KB + 显存 19.2KB + 其余）
+
+**关键验证**：加 LVGL 之后连续发 8 秒 5Hz 帧，收到 **40 个 OK**（正好 40 帧），说明界面渲染没有拖垮串口接收链路——这是这套分层架构最关键的一次检验。
+
+**踩坑**：Copy-Item -LiteralPath "...\*.h" 不会展开通配符，第一次同步源码时复制了个空目录。后来改用 -Path。
+
+---
+
 <!-- 从这里往下追加真实记录 -->

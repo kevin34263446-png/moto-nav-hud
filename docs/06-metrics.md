@@ -17,9 +17,9 @@
 
 | 指标 | 实测值 | 方法 | 备注 |
 |---|---|---|---|
-| Flash 占用 | 未测 / 512KB | `arm-none-eabi-size` | 含 LVGL |
-| RAM 占用（静态） | 未测 / 128KB | 同上（`.data + .bss`） | |
-| LVGL 显示缓冲 | 设计值 38.4KB | 240×40×2×2 | 双缓冲 |
+| Flash 占用 | **318 KB** / 512KB | `arm-none-eabi-size` | 含 LVGL 8.3.11 + 3 号字体（M4 实测） |
+| RAM 占用（静态） | **55 KB** / 128KB | 同上（`.data + .bss`） | 含 LVGL 堆 32KB + 显存 19.2KB |
+| LVGL 显示缓冲 | **19.2 KB** | 240×40×2 | M4 用单缓冲同步刷新；双缓冲留待 M5 |
 | FreeRTOS 堆 | 未测 | `xPortGetFreeHeapSize()` | |
 | 各任务栈余量 | 未测 | `vTaskList()` | 要求 ≥128B |
 

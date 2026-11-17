@@ -60,6 +60,10 @@ void st7789_init(void);
 /* 设置写入窗口并把光标移到 (x0,y0)，函数返回后可以连续写像素数据。 */
 void st7789_set_window(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 
+/* 批量推像素（LVGL flush 用）。调用前先用 st7789_set_window 设好窗口。
+ * 像素必须是 ST7789 要求的大端 RGB565 顺序（配合 LV_COLOR_16_SWAP=1）。 */
+void st7789_push_pixels(const void *px, uint32_t count);
+
 /* 全屏填充。内含测量点 MEAS 翻转，可用逻辑分析仪量耗时。 */
 void st7789_fill(uint16_t color);
 

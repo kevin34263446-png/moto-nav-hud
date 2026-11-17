@@ -1,11 +1,13 @@
 # tests\run.ps1 —— 编译并运行协议解析单元测试（宿主机，不需要硬件）
 #   用法：  .\tests\run.ps1
-#   改动 firmware/proto/ 之后必须先跑这个。红了不许烧板子。
+#   改动 firmware/Src/proto_parser.c 或 firmware/Inc/proto.h 之后必须先跑这个。
+#   红了不许烧板子。
 $ErrorActionPreference = 'Stop'
 
-$here  = $PSScriptRoot
-$proto = Join-Path $here '..\firmware\proto'
-$bin   = Join-Path $here 'test_proto.exe'
+$here = $PSScriptRoot
+$fw   = Join-Path $here '..\firmware'
+$inc  = Join-Path $fw 'Inc'
+$bin  = Join-Path $here 'test_proto.exe'
 
 $gcc = Get-Command gcc -ErrorAction SilentlyContinue
 if (-not $gcc) {
@@ -14,8 +16,8 @@ if (-not $gcc) {
 }
 
 & $gcc.Source -std=c99 -Wall -Wextra -Werror -O2 `
-    -I $proto `
-    -o $bin (Join-Path $here 'test_proto.c') (Join-Path $proto 'proto_parser.c')
+    -I $inc `
+    -o $bin (Join-Path $here 'test_proto.c') (Join-Path $fw 'Src\proto_parser.c')
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host '编译失败' -ForegroundColor Red

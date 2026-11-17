@@ -24,5 +24,12 @@ Thumbs.db
 .DS_Store
 desktop.ini
 
-# ---- µÚÈı·½¹Ì¼ş¿â£ºÓÉ tools/setup-drivers.ps1 Éú³É£¬²»Èë¿â ----
+# ---- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½â£ºï¿½ï¿½ tools/setup-drivers.ps1 ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ----
 firmware/Drivers/
+
+# ---- ç¬¬ä¸‰æ–¹ä¾èµ–ï¼šç”± tools/setup-deps.ps1 ç”Ÿæˆï¼Œä¸å…¥åº“ ----
+firmware/Drivers/
+firmware/lvgl/
+firmware/Debug/
+firmware/Release/
+firmware/build_cli/

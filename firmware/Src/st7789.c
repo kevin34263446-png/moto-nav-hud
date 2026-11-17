@@ -191,6 +191,28 @@ static void burst_color(uint16_t color, uint32_t count)
     cs_high();
 }
 
+/**
+ * 把一段 RGB565 像素原样推给屏幕（LVGL 的 flush 回调专用）。
+ * 前提：缓冲区里的颜色已经是 ST7789 要的**大端**顺序
+ *       （通过 LV_COLOR_16_SWAP=1 让 LVGL 直接按这个顺序存放）。
+ * 调用前必须先 st7789_set_window() 设定好窗口。
+ */
+void st7789_push_pixels(const void *px, uint32_t count)
+{
+    const uint8_t *p = (const uint8_t *)px;
+    uint32_t bytes = count * 2u;
+
+    cs_low();
+    dc_data();
+    while (bytes > 0u) {
+        uint16_t chunk = (bytes > 1024u) ? 1024u : (uint16_t)bytes;
+        spi_tx(p, chunk);
+        p     += chunk;
+        bytes -= chunk;
+    }
+    cs_high();
+}
+
 void st7789_fill(uint16_t color)
 {
     MEAS_HIGH();
