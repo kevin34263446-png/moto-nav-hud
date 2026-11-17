@@ -390,7 +390,15 @@ def cmd_send(args) -> int:
                     remain_m = max(0, 12000 - seq * 20)
                     eta = max(0, 18 - seq // 20)
                     fr = build_state(seq, turn, dist, 45, FLAG_FIX_OK, remain_m, eta)
-                    fault = "none" if args.fault == "none" else faults[(sent // 10) % len(faults)]
+                    # 故障注入策略：每 10 帧注入 1 次，其余帧保持干净
+                    # （只注入单一模式时就是"每隔 10 帧坏 1 帧"，这样才能验证
+                    #   "坏帧不会影响后面的好帧"）
+                    if args.fault == "none":
+                        fault = "none"
+                    elif args.fault == "all":
+                        fault = faults[(sent // 10) % len(faults)] if (sent % 10 == 0) else "none"
+                    else:
+                        fault = args.fault if (sent % 10 == 0) else "none"
 
                     if fault == "badcrc":
                         ser.write(_corrupt(fr))
