@@ -33,3 +33,6 @@ firmware/lvgl/
 firmware/Debug/
 firmware/Release/
 firmware/build_cli/
+
+# ---- 编辑备份 ----
+*.bak*
