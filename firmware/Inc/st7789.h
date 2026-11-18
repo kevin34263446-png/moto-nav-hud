@@ -35,6 +35,12 @@
  */
 #define ST7789_MADCTL    0x00u
 
+/* This panel requires INVOFF: INVON produced a white background, cyan alarm
+ * and purple normal-status bar. Other panel variants may override at build time. */
+#ifndef ST7789_INVERSION_ON
+#define ST7789_INVERSION_ON 0
+#endif
+
 /* ------------------------------------------------------------------ 颜色
  * RGB565：R5 G6 B5，高字节先发（ST7789 要求大端）。
  */

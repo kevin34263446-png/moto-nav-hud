@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-18",
+  "cubeide": "2.2.0",
+  "compiler": "Arm GCC 14.3.1",
+  "profiles": [
+    {
+      "configuration": "Debug-BLE",
+      "elf_sha256": "5C4F26EC50AB0848821AA067339D79DDF0347128AAA3363833CF2345D39C8E5E",
+      "object_count": 220,
+      "build_passed": true
+    },
+    {
+      "configuration": "Debug-VCP",
+      "elf_sha256": "9B95B347BD2778835075F342A0762BDE9C3C921912FC4D354DF6FA63066F076C",
+      "object_count": 220,
+      "build_passed": true
+    },
+    {
+      "configuration": "Release-BLE",
+      "elf_sha256": "2A52C4C6DD161165EFA3E64931A7674BC89AEDC3463D0A83F27AA8B9715A508F",
+      "object_count": 220,
+      "build_passed": true
+    },
+    {
+      "configuration": "Release-VCP",
+      "elf_sha256": "D313838D08136449C0A957B88B008BD8DAB539343D0ACD55519DDA817050A7E1",
+      "object_count": 220,
+      "build_passed": true
+    }
+  ],
+  "generator_idempotency_passed": true,
+  "standalone_cli_ble_build_passed": true,
+  "gdb_current_source": "firmware/Src/main.c",
+  "monitor_task_breakpoint_hit": true,
+  "debug_halt_seconds": 6,
+  "boot_before_halt": 17,
+  "boot_after_halt": 17,
+  "debug_freeze_register": "0x1000",
+  "restored_configuration": "Release-BLE",
+  "restored_phone_ack": [
+    1
+  ],
+  "user_confirmed_display": true,
+  "limitations": [
+    "Full FreeRTOS thread-aware stack unwinding not validated",
+    "GUI launch buttons not manually exercised; headless managed builds and GDB tested",
+    "No long soak"
+  ]
+}

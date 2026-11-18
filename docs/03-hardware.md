@@ -49,7 +49,7 @@
 
 | 模块引脚 | 接 Nucleo | 说明 |
 |---|---|---|
-| VCC | 5V（以模块手册为准） | 模块板载 LDO |
+| VCC | 按具体底板 POWER 标注；本机 3.6–6V 底板接 5V | 裸 DX-BT24 模组使用 3.3V，不能混用供电规则 |
 | GND | GND | |
 | TXD | PA10 (D2) | 模块发 → MCU 收（USART1_RX） |
 | RXD | PA9 (D8) | 模块收 → MCU 发（USART1_TX） |

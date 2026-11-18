@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-18",
+  "board": "NUCLEO-F446RE",
+  "elf_sha256": "BE03D9D669320494D0C0A22CF7ED33D1D61319F418D3ACB972ED6301860EA09D",
+  "flash_region_bytes": 268952,
+  "ram_region_bytes": 69552,
+  "passed": true,
+  "checks": [
+    {
+      "case": "300_valid_frames_target_5hz",
+      "passed": true,
+      "expected_count": 300,
+      "received_count": 300
+    },
+    {
+      "case": "bad_crc",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    },
+    {
+      "case": "half_timeout",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    },
+    {
+      "case": "glued",
+      "passed": true,
+      "expected_count": 2,
+      "received_count": 2
+    },
+    {
+      "case": "noise",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    },
+    {
+      "case": "overlap_header",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    },
+    {
+      "case": "bad_version",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    },
+    {
+      "case": "bad_type",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    },
+    {
+      "case": "continuous_32_bytes",
+      "passed": true,
+      "expected_count": 2,
+      "received_count": 2
+    },
+    {
+      "case": "continuous_64_bytes",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "continuous_80_bytes",
+      "passed": true,
+      "expected_count": 5,
+      "received_count": 5
+    },
+    {
+      "case": "continuous_256_bytes",
+      "passed": true,
+      "expected_count": 16,
+      "received_count": 16
+    },
+    {
+      "case": "continuous_1280_bytes",
+      "passed": true,
+      "expected_count": 80,
+      "received_count": 80
+    },
+    {
+      "case": "continuous_2560_bytes",
+      "passed": true,
+      "expected_count": 160,
+      "received_count": 160
+    },
+    {
+      "case": "all_64_dma_offsets",
+      "passed": true,
+      "expected_count": 256,
+      "received_count": 256
+    },
+    {
+      "case": "split_64_at_1",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "split_64_at_15",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "split_64_at_16",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "split_64_at_31",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "split_64_at_32",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "split_64_at_33",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "split_64_at_63",
+      "passed": true,
+      "expected_count": 4,
+      "received_count": 4
+    },
+    {
+      "case": "baud_mismatch_no_valid_ack",
+      "passed": true,
+      "expected_count": 0,
+      "received_count": 0
+    },
+    {
+      "case": "valid_after_baud_mismatch",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    },
+    {
+      "case": "disconnect_no_spurious_ack",
+      "passed": true,
+      "expected_count": 0,
+      "received_count": 0
+    },
+    {
+      "case": "resume_after_disconnect",
+      "passed": true,
+      "expected_count": 1,
+      "received_count": 1
+    }
+  ],
+  "final_metrics": {
+    "comms_heartbeat": 11248,
+    "ui_heartbeat": 8751,
+    "mon_heartbeat": 1056,
+    "frames_ok": 861,
+    "rx_overflow": 0,
+    "uart_errors": 8,
+    "comms_stack_free": 1824,
+    "ui_stack_free": 6556,
+    "mon_stack_free": 1924,
+    "link_lost": 1,
+    "watchdog_feeds": 1056,
+    "dma_idle_events": 395,
+    "dma_half_events": 218,
+    "dma_full_events": 216,
+    "dma_bytes": 13911,
+    "dma_restarts": 8,
+    "dma_start_failures": 0
+  },
+  "boot_counter_before": 10,
+  "boot_counter_after": 10,
+  "raw_report": "firmware/build_cli/dma-regression.json",
+  "limitations": [
+    "One dynamic short run and boundary/fault regression, not a long soak",
+    "CPU load and ISR worst-case latency not measured"
+  ]
+}

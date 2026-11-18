@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-18",
+  "platform": "Android nRF Connect",
+  "module": "DX-BT24",
+  "service": "FFE0",
+  "characteristic": "FFE1",
+  "format": "BYTE ARRAY",
+  "write_type": "Request",
+  "sent_hex": "A55A010100025E012D02D8041200AAAD",
+  "phone_screenshot_ack_hex": "4F4B20300D0A",
+  "phone_screenshot_connected": true,
+  "vcp_ack": [
+    0
+  ],
+  "first_frame_roundtrip_passed": true,
+  "baseline_frames": 300,
+  "observed_frames": 303,
+  "rx_byte_delta": 48,
+  "boot_counter_before": 14,
+  "boot_counter_after": 14,
+  "uart_errors": 0,
+  "rx_overflow": 0,
+  "dma_restarts": 0,
+  "firmware_changed": false,
+  "limitations": [
+    "Monitor stops at first ACK; repeated writes not individually counted",
+    "Phone screen rendering not separately confirmed yet",
+    "Earlier disconnect root cause not reproduced or established",
+    "No long soak or range test"
+  ]
+}

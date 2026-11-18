@@ -14,6 +14,7 @@ tests/*.obj
 **/Release/
 **/build/
 *.launch
+!firmware/moto-nav-hud*.launch
 
 # ---- Python ----
 __pycache__/
@@ -33,6 +34,10 @@ firmware/lvgl/
 firmware/Debug/
 firmware/Release/
 firmware/build_cli/
+firmware/build_baseline/
+firmware/Debug-*/
+firmware/Release-*/
+firmware/.settings/
 
 # ---- 编辑备份 ----
 *.bak*

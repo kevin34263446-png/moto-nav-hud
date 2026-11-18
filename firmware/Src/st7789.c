@@ -142,8 +142,12 @@ void st7789_init(void)
     write_cmd(0xE0, s_gamma_p, sizeof(s_gamma_p));
     write_cmd(0xE1, s_gamma_n, sizeof(s_gamma_n));
 
-    /* 6. 反转与显示开关。颜色像底片 → 把 0x21 换成 0x20 */
+    /* 6. Panel-specific inversion; independent of RGB/BGR and byte swapping. */
+#if ST7789_INVERSION_ON
     write_cmd(0x21, NULL, 0);            /* INVON  */
+#else
+    write_cmd(0x20, NULL, 0);            /* INVOFF */
+#endif
     write_cmd(0x13, NULL, 0);            /* NORON  */
     write_cmd(0x29, NULL, 0);            /* DISPON */
     HAL_Delay(20);

@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-18",
+  "board": "NUCLEO-F446RE",
+  "kernel": "FreeRTOS V11.1.0",
+  "elf_sha256": "3D6CCC987BA9597ADED11CB0081170C59BF28DC9C64022E174FA022062D6798F",
+  "flash_region_bytes": 267040,
+  "ram_region_bytes": 69360,
+  "reports": [
+    {
+      "name": "rtos-regression",
+      "passed": true,
+      "ordered": true,
+      "frames": 100,
+      "elapsed_seconds": 21.953000000008615,
+      "raw_report": "firmware/build_cli/rtos-regression.json"
+    },
+    {
+      "name": "rtos-soak",
+      "passed": true,
+      "ordered": true,
+      "frames": 3000,
+      "elapsed_seconds": 648.484999999986,
+      "raw_report": "firmware/build_cli/rtos-soak.json"
+    },
+    {
+      "name": "rtos-dynamic",
+      "passed": true,
+      "ordered": true,
+      "frames": 300,
+      "elapsed_seconds": 60.312999999994645,
+      "raw_report": "firmware/build_cli/rtos-dynamic.json"
+    },
+    {
+      "name": "rtos-soak-paced",
+      "passed": true,
+      "ordered": true,
+      "frames": 3000,
+      "elapsed_seconds": 600.3129999999946,
+      "raw_report": "firmware/build_cli/rtos-soak-paced.json"
+    }
+  ],
+  "final_metrics": {
+    "frames_ok": 6327,
+    "rx_overflow": 0,
+    "uart_errors": 0,
+    "stack_free_bytes": {
+      "mon": 1884,
+      "ui": 6556,
+      "comms": 1824
+    },
+    "boot_counter_before": 9,
+    "boot_counter_after": 9
+  },
+  "ui_stall_test": {
+    "counter_before": 7,
+    "exact_reset_latency_measured": false,
+    "normal_firmware_restored": true,
+    "counter_after": 8
+  },
+  "visual_confirmation": "User confirmed normal static and changing navigation display",
+  "limitations": [
+    "Single acceptance run, not multi-run averages",
+    "Disconnect screen not separately confirmed visually",
+    "CubeIDE project remains bare-metal; use repository CLI build"
+  ]
+}

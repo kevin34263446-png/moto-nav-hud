@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>moto-nav-hud-fw</name>
-	<comment></comment>
+	<name>moto-nav-hud</name>
+	<comment />
 	<projects>
 	</projects>
 	<buildSpec>
@@ -28,4 +28,26 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>ExternalHAL</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/ws/moto-nav-hud-fw/Drivers/STM32F4xx_HAL_Driver</locationURI>
+		</link>
+		<link>
+			<name>ExternalCMSIS</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/ws/moto-nav-hud-fw/Drivers/CMSIS</locationURI>
+		</link>
+		<link>
+			<name>ExternalLVGL</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/ws/moto-nav-hud-fw/lvgl</locationURI>
+		</link>
+		<link>
+			<name>ExternalFreeRTOS</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/deps/FreeRTOS-Kernel</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

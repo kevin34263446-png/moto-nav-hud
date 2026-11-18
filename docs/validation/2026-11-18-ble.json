@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-18",
+  "board": "NUCLEO-F446RE",
+  "module": "DX-BT24",
+  "ble_address": "48:87:2D:C7:D1:43",
+  "characteristic": "0000ffe1-0000-1000-8000-00805f9b34fb",
+  "elf_sha256": "8D4C493BFEBD60D7041A10162D622103CB9E7F1048A30AA99961570E8CC8364D",
+  "flash_region_bytes": 269048,
+  "ram_region_bytes": 69624,
+  "reports": [
+    {
+      "name": "wireless",
+      "passed": true,
+      "valid_frames": 50,
+      "ack_frames": 50,
+      "ordered": true
+    },
+    {
+      "name": "reconnect",
+      "passed": true,
+      "valid_frames": 52,
+      "ack_frames": 52,
+      "ordered": true
+    },
+    {
+      "name": "display-check",
+      "passed": true,
+      "valid_frames": 300,
+      "ack_frames": 300,
+      "ordered": true
+    }
+  ],
+  "total_valid_frames": 402,
+  "intentional_bad_crc_frames": 1,
+  "boot_counter_before": 11,
+  "boot_counter_after": 11,
+  "final_metrics": {
+    "comms_heartbeat": 35522,
+    "ui_heartbeat": 33894,
+    "mon_heartbeat": 3537,
+    "frames_ok": 300,
+    "rx_overflow": 0,
+    "uart_errors": 0,
+    "comms_stack_free": 1832,
+    "ui_stack_free": 6572,
+    "mon_stack_free": 1924,
+    "link_lost": 1,
+    "watchdog_feeds": 3537,
+    "dma_idle_events": 300,
+    "dma_half_events": 75,
+    "dma_full_events": 75,
+    "dma_bytes": 4800,
+    "dma_restarts": 0,
+    "dma_start_failures": 0,
+    "nav_source": 1
+  },
+  "limitations": [
+    "No long soak, range, or phone test",
+    "VCP ACK mirror not independently captured",
+    "Boot counters before/after refer to initial two short tests; later display test ends at 14 after user reset"
+  ],
+  "initial_short_test_metrics": {
+    "comms_heartbeat": 15494,
+    "ui_heartbeat": 14899,
+    "mon_heartbeat": 1540,
+    "frames_ok": 102,
+    "rx_overflow": 0,
+    "uart_errors": 0,
+    "comms_stack_free": 1832,
+    "ui_stack_free": 6572,
+    "mon_stack_free": 1924,
+    "link_lost": 1,
+    "watchdog_feeds": 1540,
+    "dma_idle_events": 103,
+    "dma_half_events": 26,
+    "dma_full_events": 25,
+    "dma_bytes": 1648,
+    "dma_restarts": 0,
+    "dma_start_failures": 0,
+    "nav_source": 1
+  },
+  "display_check_boot_counter": 14,
+  "user_confirmed_reset_between_test_windows": true,
+  "display_visually_confirmed": true,
+  "frame_count_scope": "Sum of separate test windows; manual reset between initial tests and display check"
+}

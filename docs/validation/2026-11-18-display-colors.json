@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-18",
+  "symptom": "White background, dark digits, purple normal bar, cyan alarm bar",
+  "cause": "Panel inversion enabled for a panel requiring INVOFF",
+  "change": "ST7789_INVERSION_ON defaults to 0; initialization sends 0x20",
+  "elf_sha256": "776D5B08435F73174DA3C96A87857A3E4E447FD1B5A3AA2A59A587A5A9612353",
+  "flash_region_bytes": 269048,
+  "ram_region_bytes": 69624,
+  "build_and_flash_verified": true,
+  "user_confirmed_black_background_white_text": true,
+  "user_confirmed_green_normal_red_alarm": true,
+  "vcp_ack_observed_in_session_output": "OK 1",
+  "final_mcu_frames": 1,
+  "final_dma_bytes": 16,
+  "uart_errors": 0,
+  "rx_overflow": 0,
+  "dma_restarts": 0,
+  "final_boot_counter": 15,
+  "boot_counter_note": "After intentional programming/reset; not a long no-reset test",
+  "limitations": [
+    "No separate post-fix seq=6 ACK captured; red color confirmed visually",
+    "Listener stopped after visual confirmation without a complete two-frame report",
+    "No long soak"
+  ]
+}

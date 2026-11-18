@@ -1,0 +1,32 @@
+[
+  {
+    "label": "右转 350m, 45km/h, 剩 12.4km",
+    "seq": 0,
+    "hex": "A55A010100025E012D02D8041200AAAD",
+    "expected_ack": "OK 0"
+  },
+  {
+    "label": "右转 120m, 38km/h, 剩 12.1km",
+    "seq": 1,
+    "hex": "A55A0101010278002602BA04110077A9",
+    "expected_ack": "OK 1"
+  },
+  {
+    "label": "左转 800m, 52km/h, 剩 11.5km",
+    "seq": 2,
+    "hex": "A55A01010201200334027E0410009B1E",
+    "expected_ack": "OK 2"
+  },
+  {
+    "label": "右转 600m + 偏航",
+    "seq": 6,
+    "hex": "A55A0101060258022C0384030D006E28",
+    "expected_ack": "OK 6"
+  },
+  {
+    "label": "到达 30m, 12km/h, 剩 0.2km",
+    "seq": 5,
+    "hex": "A55A010105061E000C0214000100E99D",
+    "expected_ack": "OK 5"
+  }
+]

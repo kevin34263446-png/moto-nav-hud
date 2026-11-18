@@ -7,12 +7,11 @@
 #   .\tools\setup-deps.ps1              # 两个依赖都准备
 #   .\tools\setup-deps.ps1 -DriversOnly
 #   .\tools\setup-deps.ps1 -LvglOnly
-$ErrorActionPreference = 'Stop'
-
 param(
     [switch]$DriversOnly,
     [switch]$LvglOnly
 )
+$ErrorActionPreference = 'Stop'
 
 $here = $PSScriptRoot
 $fw   = Join-Path $here '..\firmware'
